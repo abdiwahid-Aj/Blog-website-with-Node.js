@@ -1,0 +1,28 @@
+<div class="auth">
+    <h1 class="auth-head">
+    HI, I AM AJ
+    </h1>
+    <p class="auth-body">I AM JUST TYPICAL GUY LEARNING NODE JS</p>
+</div>
+
+<img src="/img/no2.jpg" alt="img" class="hero-img" width="981" height="528">
+
+<section class="articles">
+    <h2 class="art-head">latest posts</h2>
+    <ul class="art-ul">
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="art-l-date"><%= post.createdAt.toDateString() %></span>
+                    
+                </a>
+             </li>
+        <% }) %>
+ 
+    </ul>
+    <% if (nextpage !== null) { %>
+        <a href="/?page=<%= nextpage %>" class="pagination">&lt; View Older post</a>
+    <% } %>
+
+</section>
